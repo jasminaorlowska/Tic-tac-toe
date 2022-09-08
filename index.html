@@ -1,29 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <script src="index.js" defer></script>
     <title>Document</title>
 </head>
-<body>
-    <div class="board" id="board">
-        <div class="cell" id="cell0" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-    </div>
 
-    <div class="winning-message" id="winning-message">
-        <div data-winning-message-text></div>
-        <button id="restart-button">Restart</button>
+<body>
+    <div class="container">
+
+        <div id="login-container-bg" class="display-cover">
+            <div class="login-container">
+                <h1>Enter players</h1>
+                <div id="error">
+                </div>
+                <form action="/" method="GET" id="form">
+                    <div class="player-input">
+                        <label for="circle-player" class="cell circle"></label>
+                        <input type="text" name="circle-player" id="circle-player-input" placeholder="circle player">
+                    </div>
+                    <div class="player-input">
+                        <label class="cell x" for="x-player"></label>
+                        <input type="text" name="x-player" id="x-player-input" placeholder="x player">
+                    </div>
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <h1 id="game-title">Tic Tac Toe</h1>
+
+        <div class="players-table">
+            <div class="player-points">
+
+                <h2 id="player-one"></h2>
+                <h3 id="player-one-points">0</h3>
+            </div>
+            <div class="player-points">
+                <h2 id="player-two"></h2>
+                <h3 id="player-two-points">0</h3>
+            </div>
+        </div>
+        <div class="board x" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <div class="game-btns-container">
+            <button id="reset-btn">reset</button>
+            <button id="new-game-btn">new game</button>
+        </div>
+
+        <div id="winning-message" class="no-display display-cover">
+            <div data-winning-message-text>X wins!</div>
+            <button id="restart-btn">Play again</button>
+        </div>
+
     </div>
 </body>
+
 </html>
